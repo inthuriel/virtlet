@@ -21,6 +21,7 @@ package libvirttools
 func GetDefaultVolumeSource() VMVolumeSource {
 	return CombineVMVolumeSources(
 		GetRootVolume,
+		GetBlockVolumes,
 		ScanFlexVolumes,
 		// XXX: GetConfigVolume must go last because it
 		// doesn't produce correct name for cdrom devices
